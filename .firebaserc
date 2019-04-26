@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "britecore-frontend"
+  },
+  "targets": {
+    "britecore-frontend": {
+      "hosting": {
+        "kuvera": [
+          "kuvera-sudoku"
+        ]
+      }
+    }
+  }
+}
+

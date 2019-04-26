@@ -1,0 +1,18 @@
+@import "../variables/variable";
+@import "../functions/hex-to-rgba";
+@import "../ui-lib/select";
+@import "../ui-lib/flex";
+@import "../ui-lib/font";
+
+
+.landing {
+  min-height: 85vh;
+  width: 100%;
+ @include flex(center, center, column, nowrap);
+
+  .game-title {
+    @include text(getOpacity($ku-primary, 1), 3em, 700);
+    margin-bottom: 0.3em;
+    text-align: center;
+  }
+}

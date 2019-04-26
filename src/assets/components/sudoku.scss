@@ -1,0 +1,58 @@
+@import "../functions/hex-to-rgba";
+@import "../variables/variable";
+@import "../ui-lib/font";
+@import "../ui-lib/flex";
+@import "../ui-lib/button";
+@import "../ui-lib/overlay";
+@import "../ui-lib/input";
+
+.cell-container {
+  border: 1px solid getOpacity(#eeeeee, 1);
+  @include text(getOpacity(#999999, 1), 2.5em, 700);
+  @include flex(center, center, row, nowrap);
+}
+
+.sudoku-container {
+  z-index: 1;
+
+  .main-timer {
+    text-align: center;
+    @include text(getOpacity($ku-primary, 1), 4em, 700);
+  }
+
+  .sudoku-main-content {
+    box-shadow: 0px 1px 13px 0 getOpacity(black, 0.23);
+
+    .container {
+      @include flex(center, center, row, nowrap);
+    }
+  }
+}
+
+.mistakes-left {
+  text-align: center;
+  @include flex(center, center, row, nowrap);
+
+  .counter {
+    text-align: center;
+    @include text(getOpacity($ku-warning, 1), 4em, 700);
+  }
+
+  .text {
+    margin-left: 0.5em;
+    text-align: center;
+    @include text(getOpacity($ku-warning, 1), 3em, 700);
+  }
+}
+
+.game-completed {
+  @include flex(center, center, row, nowrap);
+
+  .text {
+    @include text(getOpacity($ku-primary, 1), 3em, 700);
+  }
+
+  .ml {
+    margin-left: 0.5em;
+  }
+}
