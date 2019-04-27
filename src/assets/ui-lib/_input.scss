@@ -1,8 +1,16 @@
 .app-input {
   -webkit-appearance: none;
   font-family: "American Typewriter";
-  //width: 60%;
-  //height: 60%;
+
+  @media (max-width: 1024px) { // phone
+    width: 60%;
+    height: 60%;
+  }
+  @media (min-width: 1025px) { // desktop
+    width: 90%;
+    height: 90%;
+  }
+
   text-align: center;
   border: none;
   outline: none;
