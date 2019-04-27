@@ -58,6 +58,7 @@
               :style="{ height: getHeight, width: getWidth }"
             >
               <input
+                inputmode="numeric"
                 class="app-input"
                 v-if="!ele.default"
                 maxlength="1"
@@ -87,7 +88,7 @@
       <div class="mistakes-left">
         <div class="counter">{{ mistakesAllowed - this.mistakes }}</div>
         <div class="text">
-          {{ mistakesAllowed - this.mistakes === 1 ? 'Life' : 'Lives' }} left
+          {{ mistakesAllowed - this.mistakes === 1 ? "Life" : "Lives" }} left
         </div>
       </div>
     </div>
@@ -126,31 +127,35 @@ export default {
 
   computed: {
     getHeight() {
-      let h = 60 / (this.matrix * this.matrix);
-
-      let height = (screen.height * h) / 100;
-      console.log({ height });
-
-      let h_px = (screen.height * h) / 100;
-      console.log({ h_px });
-
-      return `${h_px}px`;
+      return this.getBoxSize({ phonePerc: 90, desktopPerc: 60 });
     },
 
     getWidth() {
-      let w = 60 / (this.matrix * this.matrix);
-
-      let width = (screen.height * w) / 100;
-      console.log({ width });
-
-      let w_px = (screen.height * w) / 100;
-      console.log({ w_px });
-
-      return `${w_px}px`;
+      return this.getBoxSize({ phonePerc: 90, desktopPerc: 60 });
     }
   },
 
   methods: {
+    getBoxSize({ phonePerc, desktopPerc }) {
+      if (screen.width <= 1024) {
+        // phone
+        let size = phonePerc / (this.matrix * this.matrix);
+
+        let px = (screen.width * size) / 100;
+        console.log({ px });
+
+        return `${px}px`;
+      } else {
+        // desktop
+        let size = desktopPerc / (this.matrix * this.matrix);
+
+        let px = (screen.height * size) / 100;
+        console.log({ px });
+
+        return `${px}px`;
+      }
+    },
+
     updateEle({ i, j, ele }) {
       console.log({ i, j, ele });
 
