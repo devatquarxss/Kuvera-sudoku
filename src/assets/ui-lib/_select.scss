@@ -8,7 +8,12 @@
   background-size: 0.6em;
   outline: none;
   border: 2px solid getOpacity($ku-primary, 0.8);
-  padding: 0.5em 3em;
+  padding: {
+    left: 3em;
+    top: 0.5em;
+    right: 3em;
+    bottom: 0.65em;
+  }
   background-color: getOpacity($ku-primary, 0.2);
   -webkit-appearance: none;
   @include text(getOpacity($ku-primary, 1), 1em, 700);
