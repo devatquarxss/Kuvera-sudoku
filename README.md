@@ -46,7 +46,7 @@ A reusable Vue.js sudoku component.
 />
 ```
 
-###### Build Setup
+## Build Setup
 
 ```
 # install dependencies & run on local server with hot reload at: localhost:8080

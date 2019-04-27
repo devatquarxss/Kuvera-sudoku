@@ -31,7 +31,7 @@
 
 .mistakes-left {
   text-align: center;
-  @include flex(center, center, row, nowrap);
+  @include flex(center, center, row, wrap);
 
   .counter {
     text-align: center;
@@ -46,7 +46,7 @@
 }
 
 .game-completed {
-  @include flex(center, center, row, nowrap);
+  @include flex(center, center, row, wrap);
 
   .text {
     @include text(getOpacity($ku-primary, 1), 3em, 700);

@@ -1,13 +1,15 @@
 .overlay {
   height: 100vh; width: 100vw;
-  position: fixed; top: 0; left: 0;
+  position: fixed;
+  top: 0; left: 0;
+  overflow: hidden;
   background: getOpacity(black, 0.8);
   z-index: 2;
-  @include flex(center, center, row, nowrap);
+  @include flex(center, center, row, wrap);
   text-align: center;
 
   .content {
-    @include flex(center, center, column, nowrap);
+    @include flex(center, center, column, wrap);
     text-align: center;
   }
 }
